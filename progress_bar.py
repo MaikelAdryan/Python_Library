@@ -15,4 +15,14 @@ def method_two():
     sleep(1)
 
 
-method_two()
+# method_two()
+
+def method_three():
+  steps = 100
+  with tqdm(total=steps) as progress_bar:
+    for i in range(steps):
+      sleep(0.1)
+      progress_bar.update(1)
+
+
+method_three()
