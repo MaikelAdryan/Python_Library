@@ -1,2 +1,11 @@
-CEPS = ['24110706', '20735970', '25953610', '23821110', '22763585']
+# API -> https://docs.awesomeapi.com.br/api-cep
+import requests
 
+CEP = '91250105'
+URL = f'https://cep.awesomeapi.com.br/json/{CEP}'
+
+RESPONSE = requests.get(URL)
+JSON = RESPONSE.json()
+ADDRESS = JSON['address']
+
+print(ADDRESS)
