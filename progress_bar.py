@@ -7,15 +7,11 @@ def method_one():
     sleep(1)
 
 
-# method_one()
-
 def method_two():
   list = [1, 2, 3, 4, 5, 10]
   for item in tqdm(list):
     sleep(1)
 
-
-# method_two()
 
 def method_three():
   steps = 100
@@ -25,4 +21,6 @@ def method_three():
       progress_bar.update(1)
 
 
+# method_one()
+# method_two()
 method_three()
