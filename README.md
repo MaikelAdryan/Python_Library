@@ -4,14 +4,14 @@
 
 * [requests -> awesomeapi CEP](./get_address_by_cep.py)
 
+Link da API -> [https://docs.awesomeapi.com.br/api-cep](https://docs.awesomeapi.com.br/api-cep)
+
+----
 Instale a biblioteca requests pelo seu terminal
 
 ```bash
 pip install requests
 ```
-
-----
-Link da API -> [https://docs.awesomeapi.com.br/api-cep](https://docs.awesomeapi.com.br/api-cep)
 
 ----
 
@@ -30,6 +30,9 @@ print(ADDRESS)
 ```
 
 * [deep_translator -> Google Tradutor](./deep-translator.py)
+
+----
+Instale a biblioteca deep_translator pelo seu terminal
 
 ```bash
 pip install deep_translator
@@ -54,6 +57,9 @@ print(translator)
 
 * [PySimpleGUI -> Criar janelas com python](./PySimpleGUI_basic.py)
 
+----
+Instale a biblioteca PySimpleGUI pelo seu terminal
+
 ```bash
 pip install PySimpleGUI
 ```
@@ -66,7 +72,7 @@ import PySimpleGUI as sg
 sg.theme('Python')
 
 LAYOUT = [
-  [sg.Text('Hello World!')],
+  [sg.Input('Hello World!', key='input')],
   [sg.Button('CLIQUE')]
 ]
 
@@ -76,7 +82,7 @@ while True:
   events, values = WINDOW.read()
   
   if events == 'CLIQUE':
-    sg.popup(f"{values['Hello World!']}")
+    sg.popup(f"{values['input']}")
   
   if events == sg.WINDOW_CLOSED:
     break
@@ -86,6 +92,9 @@ WINDOW.close()
 ```
 
 * [tqdm -> Barra de progresso](./progress_bar.py)
+
+----
+Instale a biblioteca tqdm pelo seu terminal
 
 ```bash
 pip install tqdm
