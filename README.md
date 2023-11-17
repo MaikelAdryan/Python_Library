@@ -2,16 +2,20 @@
 
 ## Arquivos de exemplos de bibliotecas do Python
 
-* <a href='./get_address_by_cep.py'>requests -> awesomeapi CEP</a>
+* [requests -> awesomeapi CEP](./get_address_by_cep.py)
 
 Instale a biblioteca requests pelo seu terminal
+
 ```bash
 pip install requests
 ```
+
+----
+Link da API -> [https://docs.awesomeapi.com.br/api-cep](https://docs.awesomeapi.com.br/api-cep)
+
 ----
 
 ```python
-# API -> https://docs.awesomeapi.com.br/api-cep
 import requests
 
 CEP = '91250105'
@@ -25,6 +29,7 @@ print(ADDRESS)
 
 ```
 
-* <a href='get_address_by_cep.py'>Pegar um endereço passando CEP</a>
-* <a href='get_address_by_cep.py'>Pegar um endereço passando CEP</a>
-* <a href='get_address_by_cep.py'>Pegar um endereço passando CEP</a>
+* [`Pegar um endereço passando CEP`](./get_address_by_cep.py)
+
+* []()
+* []()
