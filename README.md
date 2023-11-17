@@ -25,7 +25,6 @@ print(ADDRESS)
 
 ```
 
-
 * <a href='get_address_by_cep.py'>Pegar um endereço passando CEP</a>
 * <a href='get_address_by_cep.py'>Pegar um endereço passando CEP</a>
 * <a href='get_address_by_cep.py'>Pegar um endereço passando CEP</a>
