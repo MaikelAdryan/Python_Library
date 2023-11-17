@@ -1,3 +1,4 @@
+# pip install deep_translator
 from deep_translator import GoogleTranslator
 
 PT, EN = 'pt', 'en'
