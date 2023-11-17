@@ -52,6 +52,35 @@ print(translator)
 
 ```
 
-* [Pegar um endereço passando CEP](./get_address_by_cep.py)
+* [PySimpleGUI -> Criar janelas com python](./PySimpleGUI_basic.py)
 
-* []()
+```bash
+pip install PySimpleGUI
+```
+
+----
+
+```python
+import PySimpleGUI as sg
+
+sg.theme('Python')
+
+LAYOUT = [
+  [sg.Text('Hello World!')],
+  [sg.Button('CLIQUE')]
+]
+
+WINDOW = sg.Window('Título', LAYOUT)
+
+while True:
+  events, values = WINDOW.read()
+  
+  if events == 'CLIQUE':
+    sg.popup(f"{values['Hello World!']}")
+  
+  if events == sg.WINDOW_CLOSED:
+    break
+
+WINDOW.close()
+
+```
