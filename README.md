@@ -29,7 +29,29 @@ print(ADDRESS)
 
 ```
 
-* [`Pegar um endereço passando CEP`](./get_address_by_cep.py)
+* [deep_translator -> Google Tradutor](./deep-translator.py)
 
-* []()
+```bash
+pip install deep_translator
+```
+
+----
+
+```python
+from deep_translator import GoogleTranslator
+
+PT, EN = 'pt', 'en'
+
+GOOGLE = GoogleTranslator(source=PT, target=EN)
+
+NAME, AGE = 'Adryan Maikel da Cunha Kuhne', 21
+TEXT = f'Olá Mundo! Meu nome é {NAME}, e tenho {AGE} anos de idade.'
+
+translator = GOOGLE.translate(TEXT)
+print(translator)
+
+```
+
+* [Pegar um endereço passando CEP](./get_address_by_cep.py)
+
 * []()
