@@ -1,13 +1,12 @@
 """
-    Utilizarei requests para coletar dados de empresas no site do google
-finance.
+    Utilizarei a biblíoteca `requests` para coletar dados de empresas no
+site do google finance.
 
     > https://www.google.com/finance/
 
-    Utilizarei a biblioteca beautifulsoup para encontrar na página html
-retornada pela requisição o preço e o nome da empresa, adicionando em um
-dicionário python.
-
+    Utilizarei também a biblioteca beautifulsoup para encontrar na 
+página html retornada pela requisição o preço e o nome da empresa,
+adicionando em um dicionário python.
 """
 
 import requests
@@ -35,29 +34,32 @@ def extract_name_and_price(html: bs) -> list[str, float]:
     return [name, float(price.replace("R$\xa0", "").replace(",", "."))]
 
 
-def get_price(tikers: list[str]) -> dict[str, float]:
-    """az uma requisição a api para pegar o preço e o nome das ações
+def get_price(tikers: list[str]) -> list[dict[str, float]]:
+    """Faz uma requisição a api para pegar o preço e o nome das ações
     passando os tikers como argumento.
-
-    >>> prices = get_price(["TAEE11"])
-    >>> print(prices)
-    ... {"Taesa S.A.": 36.53}
 
     Args:
         tikers (list[str]): Lista de tikers para serem pesquisados.
 
     Returns:
-        dict[str, float]: Dicionário contendo o nome e o preço atual dos
-        tikers.
+        list[dict[str, float]]: Json contendo o tiker, o nome e o preço
+    da lista de tikers.
 
+    >>> prices = get_price(["TAEE11"])
+    >>> print(prices)
+    ... [{'tiker': 'TAEE11', 'name': 'Taesa S.A.', 'price': 36.53}]
     """
-    prices = {}
+    prices = []
     for tiker in tikers:
+        shares = {}
+        shares["tiker"] = tiker
         url = f"https://www.google.com/finance/quote/{tiker}:BVMF?hl=pt"
         r = requests.get(url)
         if r.status_code == 200:
             name, price = extract_name_and_price(bs(r.text, "html.parser"))
-            prices[name] = price
+            shares["name"] = name
+            shares["price"] = price
+        prices.append(shares)
     return prices
 
 
