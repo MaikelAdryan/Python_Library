@@ -14,7 +14,7 @@ from selenium.common.exceptions import NoSuchElementException
 OPTIONS = Options()
 
 
-def test_firefox() -> bool:
+def test_firefox() -> None:
     """Função para testar se o firefox está funcionando.
     """
     browser = Firefox()
